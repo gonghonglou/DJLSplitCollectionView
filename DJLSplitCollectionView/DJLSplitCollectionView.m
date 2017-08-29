@@ -17,11 +17,11 @@
 
 @implementation DJLSplitCollectionView
 
-- (void)openFolderAtIndexPath:(NSIndexPath *)indexPath
-              withContentView:(UIView *)subClassContentView
-                    openBlock:(DJLFolderOpenBlock)openBlock
-                   closeBlock:(DJLFolderCloseBlock)closeBlock
-              completionBlock:(DJLFolderCompletionBlock)completionBlock {
+- (void)djl_openFolderAtIndexPath:(NSIndexPath *)indexPath
+                  withContentView:(UIView *)subClassContentView
+                        openBlock:(DJLFolderOpenBlock)openBlock
+                       closeBlock:(DJLFolderCloseBlock)closeBlock
+                  completionBlock:(DJLFolderCompletionBlock)completionBlock {
     self.subClassContentView = subClassContentView;
     self.openBlock = openBlock;
     self.completionBlock = completionBlock;
@@ -49,7 +49,7 @@
     
     deltaY = self.contentOffset.y;
     
-    UIImage *screenshot = [self screenshotWithOffset:-deltaY];
+    UIImage *screenshot = [self djl_screenshotWithOffset:-deltaY];
     
     // 配置上下遮罩
     CGRect upperRect = CGRectMake(0, deltaY, width, position.y - deltaY);
@@ -152,6 +152,10 @@
     
 }
 
+- (void)djl_closeSplitView {
+    [self performClose:nil];
+}
+
 -(void)tapGestureAction:(UITapGestureRecognizer *)gesture {
     if (gesture.state == UIGestureRecognizerStateChanged ||
         gesture.state == UIGestureRecognizerStateEnded) {
@@ -159,10 +163,6 @@
             [self performClose:gesture];
         }
     }
-}
-
-- (void)closeSplitView {
-    [self performClose:nil];
 }
 
 - (void)performClose:(id)sender {
@@ -249,7 +249,7 @@
         button = [[DJLFolderCoverView alloc] initWithFrame:aRect offset:0];
     }
     
-    [button setIsTopView:isTop];
+    [button djl_setIsTopView:isTop];
     
     button.position = position;
     button.layer.contentsScale = scale;
