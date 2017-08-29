@@ -9,6 +9,7 @@ A lightweight extension control for UICollectionView
 
 # Demo Project
 See `Example/DJLSplitCollectionView.xcodeproj`
+
 ![DJLSplitCollectionView](http://image.gonghonglou.com/github/DJLSplitCollectionView.gif)
 
 # Usage
@@ -51,14 +52,16 @@ self.childCollectionView.frame = CGRectMake(0, 0, self.mainCollectionView.frame.
 
 # Installation
 ## CocoaPods
-- Add pod 'DJLSplitCollectionView' to your Podfile.
-- Run pod install or pod update.
-- Import <DJLSplitCollectionView/DJLSplitCollectionView.h>.
+1. Add pod 'DJLSplitCollectionView' to your Podfile.
+2. Run pod install or pod update.
+3. Import <DJLSplitCollectionView/DJLSplitCollectionView.h>.
 
 ## Manually
-- Download all the files in the DJLSplitCollectionView subdirectory.
-- Add the source files to your Xcode project.
-- Import DJLSplitCollectionView.h.
+1. Download all the files in the DJLSplitCollectionView subdirectory.
+2. Add the source files to your Xcode project.
+3. Import DJLSplitCollectionView.h.
 
 # License
 DJLSplitCollectionView is provided under the MIT license. See LICENSE file for details.
+
+
