@@ -4,8 +4,8 @@ A lightweight extension control for UICollectionView
 
 [![Packagist](https://img.shields.io/badge/license-MIT-green.svg)](https://raw.githubusercontent.com/gonghonglou/DJLSplitCollectionView/master/LICENSE)
 [![CocoaPods](https://img.shields.io/badge/pod-v1.3.1-green.svg)]()
-[![Travis](https://img.shields.io/badge/platform-ios-green.svg)]()
-[![Travis](https://img.shields.io/badge/build-passing-green.svg)]()
+[![Travis](https://img.shields.io/badge/platform-ios-green.svg)](https://www.apple.com/nl/ios)
+[![Travis](https://img.shields.io/badge/build-passing-green.svg)](https://travis-ci.org/gonghonglou/DJLSplitCollectionView)
 
 # Demo Project
 See `Example/DJLSplitCollectionView.xcodeproj`
@@ -33,21 +33,25 @@ self.childCollectionView.frame = CGRectMake(0, 0, self.mainCollectionView.frame.
 
 ## Call method in interface `didSelectItemAtIndexPath:` of UICollectionVIew
 ```
-[self.mainCollectionView openFolderAtIndexPath:indexPath
-                               withContentView:self.childCollectionView
-                                     openBlock:^(UIView *subClassView, CFTimeInterval duration, CAMediaTimingFunction *timingFunction) {
-
-                                         self.mainCollectionView.scrollEnabled = NO;
-                                         NSLog(@"open childCollectionView");
-                                     } closeBlock:^(UIView *subClassView, CFTimeInterval duration, CAMediaTimingFunction *timingFunction) {
-
-                                         self.mainCollectionView.scrollEnabled = YES;
-                                         NSLog(@"close childCollectionView");
-                                     } completionBlock:^{
-
-                                         self.mainCollectionView.scrollEnabled = YES;
-                                         NSLog(@"completion childCollectionView");
-                                     }];
+// open split view
+[self.mainCollectionView djl_openFolderAtIndexPath:indexPath
+                                  withContentView:self.childCollectionView
+                                        openBlock:^(UIView *subClassView, CFTimeInterval duration, CAMediaTimingFunction *timingFunction) {
+                                            
+                                            self.mainCollectionView.scrollEnabled = NO;
+                                            NSLog(@"open childCollectionView");
+                                        } closeBlock:^(UIView *subClassView, CFTimeInterval duration, CAMediaTimingFunction *timingFunction) {
+                                            
+                                            self.mainCollectionView.scrollEnabled = YES;
+                                            NSLog(@"close childCollectionView");
+                                        } completionBlock:^{
+                                            
+                                            self.mainCollectionView.scrollEnabled = YES;
+                                            NSLog(@"completion childCollectionView");
+                                        }];
+    
+// close split view
+//    [self.mainCollectionView djl_closeSplitView];
 ```
 
 # Installation
