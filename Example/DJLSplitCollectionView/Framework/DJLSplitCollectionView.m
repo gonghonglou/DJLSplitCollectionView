@@ -17,11 +17,11 @@
 
 @implementation DJLSplitCollectionView
 
-- (void)openFolderAtIndexPath:(NSIndexPath *)indexPath
-              withContentView:(UIView *)subClassContentView
-                    openBlock:(DJLFolderOpenBlock)openBlock
-                   closeBlock:(DJLFolderCloseBlock)closeBlock
-              completionBlock:(DJLFolderCompletionBlock)completionBlock {
+- (void)djl_openFolderAtIndexPath:(NSIndexPath *)indexPath
+                  withContentView:(UIView *)subClassContentView
+                        openBlock:(DJLFolderOpenBlock)openBlock
+                       closeBlock:(DJLFolderCloseBlock)closeBlock
+                  completionBlock:(DJLFolderCompletionBlock)completionBlock {
     self.subClassContentView = subClassContentView;
     self.openBlock = openBlock;
     self.completionBlock = completionBlock;
@@ -31,7 +31,7 @@
     UICollectionViewCell *cell = [self cellForItemAtIndexPath:indexPath];
     CGFloat deltaY = self.contentOffset.y;
     
-    CGPoint position = CGPointMake(cell.center.x, cell.frame.origin.y+cell.frame.size.height + 2);
+    CGPoint position = CGPointMake(cell.center.x, cell.frame.origin.y + cell.frame.size.height + 2);
     CGFloat width = self.frame.size.width;
     CGFloat height = self.frame.size.height;
     
@@ -49,7 +49,7 @@
     
     deltaY = self.contentOffset.y;
     
-    UIImage *screenshot = [self screenshotWithOffset:-deltaY];
+    UIImage *screenshot = [self djl_screenshotWithOffset:-deltaY];
     
     // 配置上下遮罩
     CGRect upperRect = CGRectMake(0, deltaY, width, position.y - deltaY);
@@ -68,7 +68,7 @@
     // 绑定关闭动作
     [self.top addTarget:self action:@selector(performClose:) forControlEvents:UIControlEventTouchUpInside];
     [self.bottom addTarget:self action:@selector(performClose:) forControlEvents:UIControlEventTouchUpInside];
-    [self.top.cover addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGestureAction:)] ];
+    [self.top.cover addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGestureAction:)]];
     [self.bottom.cover addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGestureAction:)]];
     
     [self addSubview:subClassContentView];
@@ -98,7 +98,7 @@
     } else {
         newTopY = self.oldTopPoint.y;
     }
-    toTopPoint = (CGPoint){ self.oldTopPoint.x, newTopY};
+    toTopPoint = (CGPoint){self.oldTopPoint.x, newTopY};
     moveTop.fromValue = [NSValue valueWithCGPoint:self.oldTopPoint];
     moveTop.toValue = [NSValue valueWithCGPoint:toTopPoint];
     
@@ -114,7 +114,7 @@
     self.maskLayer = [CAShapeLayer layer];
     self.maskLayer.fillColor = subClassContentView.backgroundColor.CGColor;
     self.maskLayer.path = self.triangleMaskPath.CGPath;
-    self.maskLayer.frame = CGRectMake(position.x-13, self.top.frame.size.height-12, 30, 30);
+    self.maskLayer.frame = CGRectMake(position.x - 13, self.top.frame.size.height - 12, 30, 30);
     [self.top.layer addSublayer:self.maskLayer];
     
     CGPoint toBottomPoint;
@@ -124,12 +124,12 @@
     
     self.oldBottomPoint = self.bottom.layer.position;
     CGFloat newBottomY;
-    if (subClassContentView.frame.origin.y + subClassContentView.frame.size.height > height + deltaY ) {
+    if (subClassContentView.frame.origin.y + subClassContentView.frame.size.height > height + deltaY) {
         newBottomY = self.oldBottomPoint.y + (subClassContentView.frame.origin.y + contentHeight) - deltaY - height;
     } else {
         newBottomY = self.oldBottomPoint.y + contentHeight;
     }
-    toBottomPoint = (CGPoint){ self.oldBottomPoint.x, newBottomY};
+    toBottomPoint = (CGPoint){self.oldBottomPoint.x, newBottomY};
     moveBottom.fromValue = [NSValue valueWithCGPoint:self.oldBottomPoint];
     moveBottom.toValue = [NSValue valueWithCGPoint:toBottomPoint];
     
@@ -149,7 +149,10 @@
     
     [self.top.layer setPosition:toTopPoint];
     [self.bottom.layer setPosition:toBottomPoint];
-    
+}
+
+- (void)djl_closeSplitView {
+    [self performClose:nil];
 }
 
 -(void)tapGestureAction:(UITapGestureRecognizer *)gesture {
@@ -159,10 +162,6 @@
             [self performClose:gesture];
         }
     }
-}
-
-- (void)closeSplitView {
-    [self performClose:nil];
 }
 
 - (void)performClose:(id)sender {
@@ -239,7 +238,7 @@
     CGPoint origin = aRect.origin;
     CGFloat deltaY = self.contentOffset.y;
     
-    CGRect scaledRect = CGRectMake(origin.x*scale, origin.y*scale - deltaY*scale, width*scale, height*scale);
+    CGRect scaledRect = CGRectMake(origin.x * scale, origin.y * scale - deltaY*scale, width * scale, height * scale);
     CGImageRef ref1 = CGImageCreateWithImageInRect([screen CGImage], scaledRect);
     
     DJLFolderCoverView *button;
@@ -249,7 +248,7 @@
         button = [[DJLFolderCoverView alloc] initWithFrame:aRect offset:0];
     }
     
-    [button setIsTopView:isTop];
+    [button djl_setIsTopView:isTop];
     
     button.position = position;
     button.layer.contentsScale = scale;

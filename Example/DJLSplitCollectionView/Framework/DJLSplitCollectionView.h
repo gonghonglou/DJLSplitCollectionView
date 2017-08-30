@@ -28,12 +28,12 @@ typedef void (^DJLFolderOpenBlock)(UIView *subClassView, CFTimeInterval duration
 @property (nonatomic, copy) DJLFolderCompletionBlock completionBlock;
 @property (nonatomic, strong) DJLFolderCoverView *top, *bottom;
 
-- (void)openFolderAtIndexPath:(NSIndexPath *)indexPath
-              withContentView:(UIView *)subClassContentView
-                    openBlock:(DJLFolderOpenBlock)openBlock
-                   closeBlock:(DJLFolderCloseBlock)closeBlock
-              completionBlock:(DJLFolderCompletionBlock)completionBlock;
+- (void)djl_openFolderAtIndexPath:(NSIndexPath *)indexPath
+                  withContentView:(UIView *)subClassContentView
+                        openBlock:(DJLFolderOpenBlock)openBlock
+                       closeBlock:(DJLFolderCloseBlock)closeBlock
+                  completionBlock:(DJLFolderCompletionBlock)completionBlock;
 
-- (void)closeSplitView;
+- (void)djl_closeSplitView;
 
 @end

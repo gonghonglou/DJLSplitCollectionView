@@ -16,7 +16,7 @@
     
     [self createHighlightWithFrame:frame];
     
-    self.cover = [[UIView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height-delta)];
+    self.cover = [[UIView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height - delta)];
     self.cover.backgroundColor = [UIColor whiteColor];
     self.cover.alpha = 0.0;
     
@@ -36,7 +36,7 @@
     [self.layer addSublayer:self.highlight];
 }
 
-- (void)setIsTopView:(BOOL)isTop {
+- (void)djl_setIsTopView:(BOOL)isTop {
     self.highlight.position = CGPointMake(0, isTop ? (self.frame.size.height-1) : 0);
 }
 

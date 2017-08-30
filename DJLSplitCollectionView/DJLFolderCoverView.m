@@ -16,7 +16,7 @@
     
     [self createHighlightWithFrame:frame];
     
-    self.cover = [[UIView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height-delta)];
+    self.cover = [[UIView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height - delta)];
     self.cover.backgroundColor = [UIColor whiteColor];
     self.cover.alpha = 0.0;
     

@@ -94,21 +94,25 @@
         return;
     }
     
-    [self.mainCollectionView openFolderAtIndexPath:indexPath
-                                   withContentView:self.childCollectionView
-                                         openBlock:^(UIView *subClassView, CFTimeInterval duration, CAMediaTimingFunction *timingFunction) {
-                                             
-                                             self.mainCollectionView.scrollEnabled = NO;
-                                             NSLog(@"open childCollectionView");
-                                         } closeBlock:^(UIView *subClassView, CFTimeInterval duration, CAMediaTimingFunction *timingFunction) {
-                                             
-                                             self.mainCollectionView.scrollEnabled = YES;
-                                             NSLog(@"close childCollectionView");
-                                         } completionBlock:^{
-                                             
-                                             self.mainCollectionView.scrollEnabled = YES;
-                                             NSLog(@"completion childCollectionView");
-                                         }];
+    // open split view
+    [self.mainCollectionView djl_openFolderAtIndexPath:indexPath
+                                       withContentView:self.childCollectionView
+                                             openBlock:^(UIView *subClassView, CFTimeInterval duration, CAMediaTimingFunction *timingFunction) {
+                                                 
+                                                 self.mainCollectionView.scrollEnabled = NO;
+                                                 NSLog(@"open childCollectionView");
+                                             } closeBlock:^(UIView *subClassView, CFTimeInterval duration, CAMediaTimingFunction *timingFunction) {
+                                                 
+                                                 self.mainCollectionView.scrollEnabled = YES;
+                                                 NSLog(@"close childCollectionView");
+                                             } completionBlock:^{
+                                                 
+                                                 self.mainCollectionView.scrollEnabled = YES;
+                                                 NSLog(@"completion childCollectionView");
+                                             }];
+    
+    // close split view
+//    [self.mainCollectionView djl_closeSplitView];
 }
 
 

@@ -10,7 +10,7 @@
 
 @implementation UIView (DJLScreenshot)
 
-- (UIImage *)screenshot {
+- (UIImage *)djl_screenshot {
     UIGraphicsBeginImageContextWithOptions(self.frame.size, NO, 0.0);
     [self.layer renderInContext:UIGraphicsGetCurrentContext()];
     UIImage *screenshot = UIGraphicsGetImageFromCurrentImageContext();
@@ -18,7 +18,7 @@
     return screenshot;
 }
 
-- (UIImage *)screenshotWithOffset:(CGFloat)deltaY {
+- (UIImage *)djl_screenshotWithOffset:(CGFloat)deltaY {
     UIGraphicsBeginImageContextWithOptions(self.frame.size, NO, 0.0);
     CGContextRef ctx = UIGraphicsGetCurrentContext();
     CGContextTranslateCTM(ctx, 0, deltaY);

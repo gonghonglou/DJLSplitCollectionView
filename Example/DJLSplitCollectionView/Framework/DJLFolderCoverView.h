@@ -14,8 +14,8 @@
 @property (nonatomic, assign) CGPoint position;
 @property (nonatomic, strong) CALayer *highlight;
 
+
 - (instancetype)initWithFrame:(CGRect)frame offset:(CGFloat)delta;
-- (void)createHighlightWithFrame:(CGRect)aFrame;
-- (void)setIsTopView:(BOOL)isTop;
+- (void)djl_setIsTopView:(BOOL)isTop;
 
 @end

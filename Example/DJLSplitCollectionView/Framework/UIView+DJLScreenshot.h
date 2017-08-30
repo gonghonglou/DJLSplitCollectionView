@@ -10,7 +10,7 @@
 
 @interface UIView (DJLScreenshot)
 
-- (UIImage *)screenshot;
-- (UIImage *)screenshotWithOffset:(CGFloat)deltaY;
+- (UIImage *)djl_screenshot;
+- (UIImage *)djl_screenshotWithOffset:(CGFloat)deltaY;
 
 @end
