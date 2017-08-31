@@ -3,7 +3,7 @@
 A lightweight extension control for UICollectionView
 
 [![Packagist](https://img.shields.io/badge/license-MIT-green.svg)](https://raw.githubusercontent.com/gonghonglou/DJLSplitCollectionView/master/LICENSE)
-[![CocoaPods](https://img.shields.io/badge/pod-v1.3.1-green.svg)]()
+[![CocoaPods](https://img.shields.io/badge/pod-v1.3.1-green.svg)](https://cocoapods.org/pods/DJLSplitCollectionView)
 [![Travis](https://img.shields.io/badge/platform-ios-green.svg)](https://www.apple.com/nl/ios)
 [![Build Status](https://travis-ci.org/gonghonglou/DJLSplitCollectionView.svg?branch=master)](https://travis-ci.org/gonghonglou/DJLSplitCollectionView)
 
