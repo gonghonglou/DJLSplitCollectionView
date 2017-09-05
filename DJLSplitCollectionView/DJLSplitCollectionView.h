@@ -13,7 +13,18 @@ typedef void (^DJLFolderCompletionBlock)(void);
 typedef void (^DJLFolderCloseBlock)(UIView *subClassView, CFTimeInterval duration, CAMediaTimingFunction *timingFunction);
 typedef void (^DJLFolderOpenBlock)(UIView *subClassView, CFTimeInterval duration, CAMediaTimingFunction *timingFunction);
 
+
+@protocol DJLSplitCollectionViewDelegate <NSObject>
+
+@optional
+
+- (void)closeSplitView:(id)sender;
+
+@end
+
 @interface DJLSplitCollectionView : UICollectionView
+
+@property(nonatomic, strong) id<DJLSplitCollectionViewDelegate> splitDelegate;
 
 @property (nonatomic, strong) UIBezierPath *triangleMaskPath;
 @property (nonatomic, strong) CAShapeLayer *maskLayer;

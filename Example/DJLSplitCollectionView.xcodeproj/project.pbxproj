@@ -92,10 +92,10 @@
 		756C83D71F541D4700CE241D /* Framework */ = {
 			isa = PBXGroup;
 			children = (
-				755B34B31F56A27C0088C3DF /* DJLFolderCoverView.h */,
-				755B34B41F56A27C0088C3DF /* DJLFolderCoverView.m */,
 				755B34B51F56A27C0088C3DF /* DJLSplitCollectionView.h */,
 				755B34B61F56A27C0088C3DF /* DJLSplitCollectionView.m */,
+				755B34B31F56A27C0088C3DF /* DJLFolderCoverView.h */,
+				755B34B41F56A27C0088C3DF /* DJLFolderCoverView.m */,
 				755B34B71F56A27C0088C3DF /* UIView+DJLScreenshot.h */,
 				755B34B81F56A27C0088C3DF /* UIView+DJLScreenshot.m */,
 			);
