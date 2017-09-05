@@ -18,7 +18,7 @@ typedef void (^DJLFolderOpenBlock)(UIView *subClassView, CFTimeInterval duration
 
 @optional
 
-- (void)closeSplitView:(id)sender;
+- (void)djl_closeSplitView:(id)sender;
 
 @end
 

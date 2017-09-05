@@ -166,7 +166,7 @@
 
 - (void)performClose:(id)sender {
     // 响应关闭手势回调
-    [self.splitDelegate closeSplitView:sender];
+    [self.splitDelegate djl_closeSplitView:sender];
 
     if (self.closing) {
         return;
