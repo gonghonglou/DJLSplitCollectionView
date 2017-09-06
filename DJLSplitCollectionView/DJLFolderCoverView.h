@@ -15,7 +15,7 @@
 @property (nonatomic, strong) CALayer *highlight;
 
 
-- (instancetype)initWithFrame:(CGRect)frame offset:(CGFloat)delta;
+- (instancetype)initWithFrame_djl:(CGRect)frame offset:(CGFloat)delta;
 - (void)djl_setIsTopView:(BOOL)isTop;
 
 @end
