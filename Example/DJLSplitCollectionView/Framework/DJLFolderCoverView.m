@@ -10,7 +10,7 @@
 
 @implementation DJLFolderCoverView
 
-- (instancetype)initWithFrame_djl:(CGRect)frame offset:(CGFloat)delta {
+- (instancetype)initWithFrame:(CGRect)frame offset:(CGFloat)delta {
     self = [super initWithFrame:frame];
     if (!self) return nil;
     

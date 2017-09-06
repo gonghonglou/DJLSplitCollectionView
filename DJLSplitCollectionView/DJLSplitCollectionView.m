@@ -246,9 +246,9 @@
     
     DJLFolderCoverView *button;
     if (isTop) {
-        button = [[DJLFolderCoverView alloc] initWithFrame_djl:aRect offset:0];
+        button = [[DJLFolderCoverView alloc] initWithFrame:aRect offset:0];
     } else {
-        button = [[DJLFolderCoverView alloc] initWithFrame_djl:aRect offset:0];
+        button = [[DJLFolderCoverView alloc] initWithFrame:aRect offset:0];
     }
     
     [button djl_setIsTopView:isTop];
