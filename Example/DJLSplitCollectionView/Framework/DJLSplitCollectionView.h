@@ -24,7 +24,7 @@ typedef void (^DJLFolderOpenBlock)(UIView *subClassView, CFTimeInterval duration
 
 @interface DJLSplitCollectionView : UICollectionView
 
-@property(nonatomic, strong) id<DJLSplitCollectionViewDelegate> splitDelegate;
+@property (nonatomic, weak) id<DJLSplitCollectionViewDelegate> splitDelegate;
 
 @property (nonatomic, strong) UIBezierPath *triangleMaskPath;
 @property (nonatomic, strong) CAShapeLayer *maskLayer;
