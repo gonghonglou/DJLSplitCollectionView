@@ -10,7 +10,8 @@ A lightweight extension control for UICollectionView
 # Demo Project
 See `Example/DJLSplitCollectionView.xcodeproj`
 
-![splitview.gif](http://image.gonghonglou.com/github/splitview.gif)
+![splitview.gif](http://image.gonghonglou.com/github/splitviewloop.gif)
+
 
 # Usage
 ## Initialize UICollectionVIew object and split view
